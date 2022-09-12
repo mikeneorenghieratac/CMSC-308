@@ -1,1 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace CMSC308_ACTIVITY1_RATAC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] Email = {"mikeneo@gmail.com",
+                            "renghie@gmail.com"};
+
+            string[] Username = {"mikeneo",
+                                "renghie"};
+
+
+            string[] Password = {"bscs3bgv",
+                                "bsed3a"};
+
+
+            Console.Write("index    : ");
+            int index = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Email    : " + Email[index]);
+            Console.WriteLine("Username : " + Username[index]);
+            Console.WriteLine("Password : " + Password[index]);
+
+            Console.ReadKey();
+
+        }
+    }
+}
