@@ -3,22 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace CMSC308_ACTIVITY1_RATAC
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string[] Email = {"mikeneo@gmail.com",
-                            "renghie@gmail.com"};
+            string[] Email = new string[2];
 
-            string[] Username = {"mikeneo",
-                                "renghie"};
+            string[] Username = new string[2];
 
+            string[] Password = new string[2];
 
-            string[] Password = {"bscs3bgv",
-                                "bsed3a"};
+            Email[0] = "mikeneo@gmail.com";
+            Email[1] = "renghie@gmail.com";
 
+            Username[0] = "mikeneo";
+            Username[1] = "renghie";
+
+            Password[0] = "bscs3bgv";
+            Password[1] = "bscsIIIBGraphicsVisualisation";
 
             Console.Write("index    : ");
             int index = Convert.ToInt32(Console.ReadLine());
