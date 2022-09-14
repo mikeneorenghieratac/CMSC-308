@@ -1,1 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace CMSC308_ACTIVITY2_RATAC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] Number = new int[5];
+
+            Console.WriteLine("==ARRAY ODD AND EVEN==");
+            Console.WriteLine();
+            Number[0] = 3;
+            Number[1] = 6;
+            Number[2] = 9;
+            Number[3] = 12;
+            Number[4] = 15;
+
+            foreach (int elem in Number)
+            {
+                Console.WriteLine("Enter Element: " + elem);
+            }
+
+            Console.WriteLine();
+            Console.Write("Odd Numbers  :");
+            foreach (int elem in Number)
+                if (elem % 2 == 1)
+                {
+                    Console.Write(elem + " ");
+                }
+                else
+                {
+                }
+
+            Console.WriteLine();
+            Console.Write("Even numbers :");
+            foreach (int elem in Number)
+                if (elem % 2 == 0)
+                {
+                    Console.Write(elem + " ");
+                }
+                else
+                {
+                }
+
+            Console.ReadLine();
+        }
+
+    }
+
+}
