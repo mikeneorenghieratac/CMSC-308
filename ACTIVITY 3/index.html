@@ -1,1 +1,71 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+import javax.swing.text.DefaultFormatter;
+
+public class App {
+    public static void main(String[] args)
+    {
+        float English, Math, Science, MAPEH;
+        float average;
+        float subj = 4 ;
+        DecimalFormat df = new DecimalFormat(".00");  
+        Scanner scan = new Scanner (System.in);
+
+        System.out.println("Input Subject Grades");
+        System.out.print("English :");
+        English = scan.nextFloat();
+        if (English >= 100 )
+        {
+            System.out.println("Invalid Number");
+            System.exit(0);
+        }
+        System.out.print("Math :");
+        Math = scan.nextFloat();
+        if (Math >= 100 )
+        {
+            System.out.println("Invalid Number");
+            System.exit(0);
+        }
+        System.out.print("Science :");
+        Science = scan.nextFloat();
+        if (Science >= 100 )
+        {
+            System.out.println("Invalid Number");
+            System.exit(0);
+        }
+        System.out.print("MAPEH :");
+        MAPEH = scan.nextFloat();
+        if (MAPEH >= 100 )
+        {
+            System.out.println("Invalid Number");
+            System.exit(0);
+        }
+
+        average = English + Math + Science + MAPEH;
+        average /= 4;
+        System.out.println("Average :" + df.format(average));
+
+        if (average >= 98 )
+        {
+            System.out.println("With Highest Honors");
+        }
+        else if  (average >= 95 )
+        {
+            System.out.println("With High Honors");
+        }
+        else if  (average >= 90 )
+        {
+            System.out.println("With Honors");
+        }
+        else if  (average >= 75 )
+        {
+            System.out.println("Passed");
+        }
+        else if  (average <= 75 )
+        {
+            System.out.println("Failed");
+        }
+    }
+}
 
