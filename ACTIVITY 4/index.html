@@ -1,1 +1,40 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 
+public class App {
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner (System.in);
+        ArrayList<String> list = new ArrayList<String>();
+        int i=1, x, y, t;
+         
+        System.out.print("Input Test Case: ");
+        t = scan.nextInt();
+
+        while (i <= t){
+
+            System.out.println("No. of Test Cases: " + i);
+            
+            System.out.print("Uber Charges: ");
+            x = scan.nextInt();
+            System.out.print("Grab Charges: ");
+            y = scan.nextInt();  
+        
+            if ( x < y ){
+                list.add("First");
+            }
+            else if ( x > y ){
+                list.add("Second");
+            }
+            else {
+                list.add("Any");
+            } 
+            i++;
+        }
+        for (String s : list) {
+            System.out.println(s);
+        }
+    
+    }
+
+}
