@@ -1,0 +1,186 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CMSC308_ACTIVITY5_RATAC
+{
+    class Program
+    {
+        struct BoardMaker
+        {
+            public int InkColor;
+            public string InkContent;
+           
+        }
+            static void Main(string[] args)
+        {
+            BoardMaker bm;
+            bm.InkColor = 20;
+            bool exit = false;
+
+            do
+            {
+                Console.WriteLine("=======MENU=======");
+                Console.WriteLine("1.   Display Info" + "\n2.   Change Color" + "\n3.   Refill" + "\n4.   Write" + "\n" + "\n5.   Exit");
+                Console.WriteLine();
+
+                Console.Write("Enter Your Choice:   ");
+                bm.InkContent = Console.ReadLine();
+               
+                if ("1" == bm.InkContent)
+                {
+                    Console.Clear();
+                    Console.WriteLine("===Display Info===");
+                    Console.WriteLine("Ink Color ml:     "+bm.InkColor+"ml");
+                    Console.WriteLine("Ink Content:     "+ Console.ForegroundColor);
+                    if(bm.InkColor == 0)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Refill ink!!!");
+                    }
+                    else{ 
+                    }
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                else if ("2" == bm.InkContent)
+                {
+                    if (bm.InkColor != 0)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("");
+                        Console.WriteLine("===Change Color===");
+                        colorink("");
+                        bm.InkContent = Console.ReadLine();
+                        if ("1" == bm.InkContent)
+                        {
+                            Console.Clear();
+                            if (bm.InkColor == 0)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Refill ink!!!");
+                            }
+                            else
+                            {
+                            }
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("You Choose White Color");
+                            Console.WriteLine();
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                        else if ("2" == bm.InkContent)
+                        {
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("You Choose Red Color");
+                            Console.WriteLine();
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                        else if ("3" == bm.InkContent)
+                        {
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("You Choose Red Color");
+                            Console.WriteLine();
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                        else if ("4" == bm.InkContent)
+                        {
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("You Choose Red Color");
+                            Console.WriteLine();
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                        else
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Invalid Input!");
+                            Console.WriteLine();
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Not Enough Ink!"+"\nRefill before you Change ");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                }
+                else if ("3" == bm.InkContent)
+                {
+                    Console.Clear();
+                    bm.InkColor = bm.InkColor + 20;
+                    Console.WriteLine("Your Ink Refilled:   "+ bm.InkColor+"ml");
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                else if("4" == bm.InkContent)
+                {
+                    if (bm.InkColor != 0)
+                    {
+                        Console.Clear();
+                        Console.Write("Write Something Here:    ");
+                        bm.InkContent = Console.ReadLine();
+                        bm.InkColor = bm.InkColor - 10;
+                        Console.WriteLine("Your Ink Level: " + bm.InkColor + "ml");
+                        Console.WriteLine();
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Not Enough Ink!");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                   
+                }
+                else if ("5" == bm.InkContent)
+                {
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Invalid Input!");
+                    Console.WriteLine();
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            } while (!exit);
+        }static void colorink(string colorink)
+        {
+            string[] colori = new string[4];
+
+            colori[0] = "White";
+            colori[1] = "Red";
+            colori[2] = "Blue";
+            colori[3] = "Green";
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("1. Ink Color:       "+colori[0]);
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("2. Ink Color:       " + colori[1]);
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("3. Ink Color:       " + colori[2]);
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("4. Ink Color:       " + colori[3]);
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+    }
+}
