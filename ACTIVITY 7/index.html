@@ -1,1 +1,167 @@
+import java.io.Console;
+import java.text.spi.DecimalFormatSymbolsProvider;
+import java.util.Scanner;
+import javax.sound.sampled.FloatControl;
 
+class CMSC308_ACTIVITY7_RATAC{ 
+    public static void main(String args[]) 
+    {  
+     Scanner scan = new Scanner(System.in);
+     String input;
+     Boolean done = false;
+
+     do{
+        System.out.println("===Calculator Menu===");
+        System.out.println("Choose Operation: ");
+        System.out.println("1. Addition"+
+                        "\n2. Subtraction"+
+                        "\n3. Multiplication"+
+                        "\n4. Division"+
+                        "\n5. Exponent"+
+                        "\n6. Modulo"+
+                        "\n"+
+                        "\n7. Exit");
+        System.out.println();
+        System.out.print("Select Operation: ");                
+        input = scan.nextLine();
+
+        switch (input){
+
+            case "1":
+                add();
+                break;
+            case "2":
+                sub();
+                break;
+            case "3":
+                product();
+                break;
+            case "4":
+                divide();
+                break;
+            case "5":
+                exponent();
+                break;
+            case "6":
+                modulo();
+                break;
+            case "7":
+                return;
+            default:
+                System.out.println(""+"\nInvalid Input"+"\n");
+        }
+     }while(!done);
+    }  
+    static void add()
+    {
+        System.out.println();
+        System.out.println("==Addition==");
+        Scanner scan = new Scanner(System.in);
+        float sum = 0;
+        float num1,num2;
+
+        System.out.print("Input 1st Number: ");
+        num1 = scan.nextFloat();
+        System.out.print("Input 2nd Number: ");
+        num2 = scan.nextFloat();
+
+        sum = num1 + num2;
+        System.out.println();
+        System.out.println("The Sum of: "+num1+" + "+num2+" = "+sum);
+        System.out.println();
+    }
+    static void sub()
+    {
+        System.out.println();
+        System.out.println("==Subtraction==");
+        Scanner scan = new Scanner(System.in);
+        float sub = 0;
+        float num1,num2;
+
+        System.out.print("Input 1st Number: ");
+        num1 = scan.nextFloat();
+        System.out.print("Input 2nd Number: ");
+        num2 = scan.nextFloat();
+
+        sub = num1 - num2;
+        System.out.println();
+        System.out.println("The Difference of: "+num1+" - "+num2+" = "+sub);
+        System.out.println();
+    } 
+    static void product()
+    {
+        System.out.println();
+        System.out.println("==Multiplication==");
+        Scanner scan = new Scanner(System.in);
+        float times = 0;
+        float num1,num2;
+
+        System.out.print("Input 1st Number: ");
+        num1 = scan.nextFloat();
+        System.out.print("Input 2nd Number: ");
+        num2 = scan.nextFloat();
+
+        times = num1 * num2;
+        System.out.println();
+        System.out.println("The product of: "+num1+" * "+num2+" = "+times);
+        System.out.println();
+    } 
+    static void divide()
+    {
+        System.out.println();
+        System.out.println("==Division==");
+        Scanner scan = new Scanner(System.in);
+        float divided = 0;
+        float num1,num2;
+
+        System.out.print("Input 1st Number: ");
+        num1 = scan.nextFloat();
+        System.out.print("Input 2nd Number: ");
+        num2 = scan.nextFloat();
+
+        divided = num1 / num2;
+        System.out.println();
+        System.out.println("The Quotient of: "+num1+" / "+num2+" = "+divided);
+        System.out.println("               = "+(int)divided);
+        System.out.println();
+    } 
+    static void exponent()
+    {
+        System.out.println();
+        System.out.println("==Exponent==");
+        Scanner scan = new Scanner(System.in);
+        int expo = 0;
+        int num1,num2;
+
+        System.out.print("Input 1st Number: ");
+        num1 = scan.nextInt();
+        System.out.print("Input 2nd Number: ");
+        num2 = scan.nextInt();
+
+        expo = (int)Math.pow(num1, num2);
+        System.out.println();
+        System.out.println("The Exponent of: "+"("+num1+")"+num2+" = "+expo);
+        System.out.println();
+    }
+    static void modulo()
+    {
+        System.out.println();
+        System.out.println("==Modulo==");
+        Scanner scan = new Scanner(System.in);
+        int modu1 = 0,modu2;
+        int num1,num2;
+
+        System.out.print("Input 1st Number: ");
+        num1 = scan.nextInt();
+        System.out.print("Input 2nd Number: ");
+        num2 = scan.nextInt();
+
+        modu1 = num1 / num2;
+        modu2= num1 % num2;
+        System.out.println();
+        System.out.println("The Quotient : "+num1+" / "+num2);
+        System.out.println("The Divident : "+modu1 );
+        System.out.println("The Remainder: "+modu2 );
+        System.out.println();
+    }
+}
