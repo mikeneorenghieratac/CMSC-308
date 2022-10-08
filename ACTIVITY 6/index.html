@@ -1,1 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace CMSC308_ACTIVITY6_RATAC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<char> letterlist = new List<char>() {'S','X','C','O','M','P','U','T','E','R' };
+            //Display
+            Console.WriteLine("X   C   O   M   P   U   T   E   R   S"+
+                            "\n"+
+                            "\n1   2   3   4   5   6   7   8   9   0"+
+                            "\n");
+            //Input
+            Console.Write("Enter a Code:        ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            string text = Console.ReadLine();
+            char[] letter = text.ToCharArray();
+            int input;
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine();
+            Console.Write("Equivalent Number:   ");
+            //Display Answer Condition
+            foreach (char c in letter)
+            {
+                input = letterlist.IndexOf(c);
+                if ( input >= 0 )
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(input);
+                 
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Input");
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
