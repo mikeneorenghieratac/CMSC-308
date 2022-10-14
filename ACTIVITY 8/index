@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CMSC308_ACTIVITY8_RATAC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] num = new int[5];
+            //HASHSET 1
+            Console.WriteLine("=====HASHSET 1=====");
+            HashSet<int> hashlist1 = new HashSet<int>();
+            for (int i1 = 0; i1 < 5; i1++)
+            {
+                Console.Write("Element: ", i1);
+                num[i1] = int.Parse(Console.ReadLine());
+            }
+            //HASHSET 2
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("=====HASHSET 2=====");
+            HashSet<int> hashlist2 = new HashSet<int>();
+            for (int i2 = 0; i2 < 5; i2++)
+            {
+                Console.Write("Element: ", i2);
+                hashlist2.Add(int.Parse(Console.ReadLine()));
+            }
+            //UNION
+            foreach (int elem in num)
+            {
+                hashlist1.Add(elem);
+            }
+            Console.WriteLine();
+            hashlist1.UnionWith(hashlist2);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Write("UNION:           ");
+            foreach (int un in hashlist1)
+            {
+                Console.Write(un + " ");
+            }
+            hashlist1.Clear();
+            //INTERSECT
+            foreach (int elem in num)
+            {
+                hashlist1.Add(elem);
+            }
+            hashlist1.IntersectWith(hashlist2);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Write("INTERSECTION:    ");
+            foreach (int inter in hashlist1)
+            {
+                Console.Write(inter + " ");
+            }
+            hashlist1.Clear();
+            //SET DIFFERENCE
+            foreach (int elem in num)
+            {
+                hashlist1.Add(elem);
+            }
+            hashlist1.ExceptWith(hashlist2);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Write("SET DIFFERENCE:  ");
+            foreach (int exe in hashlist1)
+            {
+                Console.Write(exe + " ");
+            }
+            Console.ReadLine();
+        }
+    }
+}
