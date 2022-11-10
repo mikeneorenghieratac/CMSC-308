@@ -1,1 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace CMSC308_ACTIVITY10_RATAC
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("===Queue MENU==="+
+                            "\n1. Add an Element"+
+                            "\n2. Remove Front Element"+
+                            "\n3. Search an Element"+
+                            "\n4. Display Queue Elements"+
+                            "\n5. Exit"+
+                            "\n");
+            Queue<string> names = new Queue<string>(5);
+            bool exit = false;
+            do
+            {
+                Console.Write("Enter Choice:    ");
+                string input = Console.ReadLine();
+                Console.WriteLine();
+                try
+                {
+                    switch (input)
+                    {
+                        case "1":
+                            if (names.Count < 5)
+                            {
+                                Console.Write("Input Name Here:     ");
+                                string addele = Console.ReadLine();
+                                names.Enqueue(addele);
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine("Name '{0}' is added to List Queue!", addele);
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                                Console.WriteLine();
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("Max input is 1 to 5 only!");
+                                Console.ForegroundColor = ConsoleColor.Gray;
+                            }
+                            break;
+
+                        case "2":
+                            try
+                            {
+                                if (names.Count != 0)
+                                {
+                                    Console.WriteLine("The front Element has been Removed!");
+                                    foreach (string i in names)
+                                    {
+                                        Console.ForegroundColor = ConsoleColor.Red;
+                                        Console.WriteLine("'" + i + "'");
+                                        Console.ForegroundColor = ConsoleColor.Gray;
+                                    }
+                                    Console.WriteLine();
+                                    Console.WriteLine("Front Name:      " + names.Peek());
+                                    Console.WriteLine("Remove Name:     " + names.Dequeue());
+                                    Console.WriteLine("New Front Name:  " + names.Peek());
+                                    Console.WriteLine();
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Red;
+                                    Console.WriteLine("Please input Element first");
+                                    Console.ForegroundColor = ConsoleColor.Gray;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                            }
+                            break;
+
+                        case "3":
+                            Console.Write("Input number of Element:     ");
+                            string search = Console.ReadLine();
+                            Console.WriteLine(names.Contains(search));
+                            Console.WriteLine();
+                            break;
+
+                        case "4":
+                            Console.WriteLine("Queue Elements Numbers:  " + names.Count);
+                            foreach (string display in names)
+                            {
+                                Console.WriteLine(display);
+                            }
+                            Console.WriteLine();
+                            break;
+
+                        case "5":
+                            return;
+
+                        default:
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Invalid Input");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Invalid Input");
+                }
+            } while (!exit);
+            Console.ReadLine();
+        }
+    }
+}
