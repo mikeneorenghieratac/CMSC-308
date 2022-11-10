@@ -68,7 +68,7 @@ namespace CMSC308_ACTIVITY10_RATAC
                                 else
                                 {
                                     Console.ForegroundColor = ConsoleColor.Red;
-                                    Console.WriteLine("Please input Element first");
+                                    Console.WriteLine("Please input Element(Name) first");
                                     Console.ForegroundColor = ConsoleColor.Gray;
                                 }
                             }
@@ -78,7 +78,7 @@ namespace CMSC308_ACTIVITY10_RATAC
                             break;
 
                         case "3":
-                            Console.Write("Input number of Element:     ");
+                            Console.Write("Search Element(Name):     ");
                             string search = Console.ReadLine();
                             Console.WriteLine(names.Contains(search));
                             Console.WriteLine();
